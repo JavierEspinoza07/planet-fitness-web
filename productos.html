@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital | Importadora Planet Fitness Bolivia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body class="catalog-page">
+    <!-- Header Principal -->
+ <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand logo-link" href="index.html">
+                <img src="assets/logos/logo.png" alt="Importadora Planet Fitness Bolivia" class="logo-image">
+                <div class="logo-text ms-3">
+                                        <h1>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h1>
+                    <p class="tagline mb-0">Equipamiento profesional desde 2015</p>
+                </div>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html"><i class="fas fa-dumbbell"></i> Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link btn-quote" href="cotizacion.html"><i class="fas fa-file-alt"></i> Cotizar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <!-- Header del Catálogo Digital -->
+    <div class="catalog-digital-header">
+        <div class="container">
+            <h1 class="catalog-digital-title">📱 Catálogo Digital Profesional</h1>
+            <p class="catalog-digital-subtitle">208 productos - Navegación rápida - Imágenes optimizadas</p>
+            <div class="catalog-digital-count">208 ITEMS</div>
+        </div>
+    </div>
+
+    <!-- Buscador Compacto -->
+    <div class="catalog-search-compact">
+        <div class="search-wrapper">
+            <div class="search-box-compact">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar producto por nombre o código..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contador de resultados -->
+    <div class="results-counter">
+        Mostrando: <span id="resultsCount">208</span> productos de <span>208</span> disponibles
+    </div>
+
+    <!-- Navegación por categorías -->
+    <nav class="catalog-nav-compact" id="navSections"></nav>
+
+    <!-- Grid de productos COMPACTO -->
+    <main class="catalog-grid-compact" id="catalogContent"></main>
+
+    <!-- Mensaje sin resultados -->
+    <div class="no-results-compact" id="noResults" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No se encontraron productos</h3>
+        <p>Intenta con otros términos de búsqueda</p>
+    </div>
+
+    <!-- Carrito flotante -->
+    <div class="cart-float-compact" id="cartFloat">
+        <div class="cart-count-badge" id="cartCount">0</div>
+        <span>Mi Lista</span>
+        <i class="fas fa-whatsapp"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-dumbbell"></i>
+                                <h3>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h3>
+                </div>
+                <p>Equipamiento fitness profesional con atención 24/7 por WhatsApp. ¡Habla con nosotros ahora!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/59170649037            " target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                    <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                    <li><a href="servicios.html"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>WhatsApp 24/7</h4>
+                <div class="whatsapp-info">
+                    <div class="whatsapp-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <p><strong>+591 70649037            </strong></p>
+                            <p>Atención inmediata</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p><strong>24 horas / 7 días</strong></p>
+                            <p>Incluidos feriados</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <p><strong>Respuesta rápida</strong></p>
+                            <p>Máximo 5 minutos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul class="footer-links">
+                    <li><a href="servicios.html#asesoria"><i class="fas fa-chevron-right"></i> Asesoría Gratuita</a></li>
+                    <li><a href="servicios.html#instalacion"><i class="fas fa-chevron-right"></i> Instalación</a></li>
+                    <li><a href="servicios.html#soporte"><i class="fas fa-chevron-right"></i> Soporte Técnico</a></li>
+                    <li><a href="servicios.html#mantenimiento"><i class="fas fa-chevron-right"></i> Mantenimiento</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Catálogo Completo</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2024 Importadora Planet Fitness Bolivia. Atención 24/7 por WhatsApp.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="https://wa.me/59170649037            ?text=Hola,%20quiero%20saber%20sobre%20términos%20y%20condiciones" target="_blank">Términos y Condiciones</a>
+                <a href="https://wa.me/59170649037            ?text=Hola,%20tengo%20una%20consulta%20sobre%20privacidad" target="_blank">Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- JavaScript DEL CATÁLOGO DIGITAL -->
+    <script>
+        // CONFIGURACIÓN
+        const WHATSAPP_NUMBER = "59170649037            ";
+        const TOTAL_PRODUCTOS = 208;
+        
+        // DATOS DEL CATÁLOGO
+        const data = [
+            { 
+                categoria: "1. MÁQUINAS CON PESO", 
+                items: [
+                    "PEC FLY", "Shoulder Press", "LATERAL RAISE", "Biceps Curl", "SEATED DIP", 
+                    "Leg Extension", "Seated Leg Curl", "Prone Leg Curl", "Abdominal Muscle Trainer", 
+                    "Rotary Torso", "ABDUCTOR/ADDUCTOR", "Hip Glute", "Hip Glute (V2)", 
+                    "EXTENSIÓN CUÁDRICEPS", "FEMORAL SENTADO", "ADUCTOR Y ABDUCTOR", 
+                    "MULTY HIP ADUCTOR/ABDUCTOR Y GLÚTEOS", "ABDOMINALES CON PESO INTEGRADO", 
+                    "PRESS DE PECHO", "EXTENSIÓN DORSAL (INTEGRADO)", "REMOS DE ESPALDA / 2 AGARRES", 
+                    "HOMBROS LATERALES", "BICEPS CURL (INTEGRADO)", "TRICEPS CURL 2025"
+                ] 
+            },
+            { 
+                categoria: "2. MÁQUINAS SIN PESO", 
+                items: [
+                    "Smith", "Smith Machine 2024", "SMITH MACHINE 2025", "POWER SMITH", 
+                    "Prensa de 45 grados", "PRENSA DE 45 GRADOS PESO LIBRE", "PRENSA PÉNDULO", 
+                    "SENTADILLA V SQUAT", "SENTADILLA PÉNDULO", "SENTADILLA PÉNDULO (V2)", 
+                    "SENTADILLA PERFECTA", "SENTADILLA PERFECTA PLATAFORMA INCLINABLE", 
+                    "Hack Slide", "Hip Thrust Parado", "HIP THRUST CON RODILLO", 
+                    "HIP THRUST CON CINTURON", "ELEVACIÓN DE CADERA PARA GLÚTEOS", 
+                    "ELEVACIÓN DE CADERA CON RODILLO", "Squat Rack", "RACK PARA SENTADILLA", 
+                    "EXTENSION CUADRICEPS Y FEMORAL PARADO", "PATADA DE GLUTEO", 
+                    "PATADA DE GLÚTEO (2025)", "MAQUINA DE PESO MUERTO, ESPALDA, SENTADILLA BULGARA", 
+                    "MULTI FUNCION DE HOMBRO Y PECHO PARADO", "ABDUCTOR PARADO", 
+                    "LEVANTAMIENTO DE CADERA PARADO", "DOBLE POLEA 2025", 
+                    "Multi Jungle 8 estaciones", "JUNGLA DE 8 ESTACIONES 2025"
+                ] 
+            },
+            { 
+                categoria: "3. BANCAS", 
+                items: [
+                    "Flat Olympic Bench", "Incline Olympic Bench", "Decline Olympic Bench", 
+                    "Adjustable Bench", "BANCA AJUSTABLE 2024", "BANCA AJUSTABLE 2025", 
+                    "Predicador", "PREDICADOR 2025", "BANCA PREDICADOR 2024", 
+                    "Roman Chair", "SILLA ROMANA", "SILLA ROMANA PARA ESPALDA BAJA", 
+                    "BANCA DE 90 GRADOS", "BANCA DECLINADA DE ABDOMINALES", "BANCA PLANA", 
+                    "BANCA FIJA", "BANCA DE 75 GRADOS", "BANCA DE PECHO PLANO", 
+                    "BANCA DE PECHO ALTO", "DOMINADAS/FONDOS/ABDOMINALES", 
+                    "DOMINADAS/ABDOMINALES Y FONDOS", "Squat Sissy", "SENTADILLA SISSY", 
+                    "SENTADILLA SISSY 2025", "Abdominal Work Station", "ABDOMINALES 2025"
+                ] 
+            },
+            { 
+                categoria: "4. RACKS", 
+                items: [
+                    "Rack + Bumpers de 10 a 50 mas barra recta", 
+                    "SOPORTE PARA MANCUERNAS DE 10 PARES", "PORTA MANCUERNAS PARA 10 PARES", 
+                    "PORTA MANCUERNAS RUSAS", "DISK RACK 2024", "PORTA DISCOS", 
+                    "PORTA BARRAS 2025", "PORTA BARRAS BUMPERS", 
+                    "PORTA BARRAS OLIMPICAS (9 PCS)", "PORTA BALONES MEDICINALES", 
+                    "PORTA SACOS DE CROSSFIT", "RACK PORTA ACCESORIOS"
+                ] 
+            },
+            { 
+                categoria: "5. HAMMER", 
+                items: [
+                    "PECHO ALTO PESO LIBRE", "PECHO BAJO PESO LIBRE", "EXTENSIÓN DORSAL", 
+                    "HOMBRO PRESS MILITAR", "HOMBRO PRESS ANTERIOR O TRAS NUCA", 
+                    "HAMMER DE PECHO •", "HOMBROS LATERALES (HAMMER)", 
+                    "ELEVACIONES DE HOMBRO DOS AGARRES", "ELEVACIÓN LATERAL DE HOMBRO PARADO", 
+                    "BICEPS CURL (HAMMER)", "TRICEPS CURL (HAMMER)", "PANTORRILLAS", 
+                    "PANTORRILLAS (V2)", "GEMELOS SENTADO TIPO BURRITO", "CONTRACCION DORSAL PARADO"
+                ] 
+            },
+            { 
+                categoria: "6. MÁQUINAS DE CARDIO", 
+                items: [
+                    "Treadmill LED", "GRADAS ELÉCTRICAS", "GRADAS ELÉCTRICAS 2024", 
+                    "ELÍPTICAS", "REMOS DE CROSSFIT", "BICICLETAS DE CROSSFIT", 
+                    "BICICLETAS DE SPINNING 2024", "BICICLETAS DE SPINNING 2025", 
+                    "TROTADORAS MECÁNICAS", "TRAMPOLINES"
+                ] 
+            },
+            { 
+                categoria: "7. ACCESORIOS", 
+                items: [
+                    "Set de mancuernas de 2.5 hasta 50 kilos", 
+                    "MANCUERNAS LF URETANO (SET 1050 KG)", 
+                    "MANCUERNAS LIFE FITNESS DE URETANO (2025)", 
+                    "MANCUERNAS HEXAGONALES (SET)", "SET DE MANCUERNAS 380 KG", 
+                    "SET DE PESAS RUSAS 160 KG", "Discos de uretano 600 kilos", 
+                    "DISCOS DE URETANO LF (POR KG)", "DISCOS DE URETANO TECHNOGYM", 
+                    "BUMPERS LF BARRAS RECTAS", "BUMPERS LF BARRAS CURVAS", 
+                    "BARRAS DE COMPETENCIA 1000 LB", "BARRAS PARA PESO MUERTO", 
+                    "BARRA CON APOYO FRONTAL DE SENTADILLA", 
+                    "BARRAS CON DISCOS ARMABLES (FUNCIONAL)", 
+                    "BARRAS DE URETANO CON PESO SET", "Pisos de goma 150 m2", 
+                    "PISO DE GOMA 2CM", "PISO DE GOMA 2CM ESPESOR (M2)", 
+                    "COLCHONETA PARA BARRAS", "BARRA T", "RING DE MMA 5X5M", 
+                    "RING DE BOXEO 5X5M", "SACO DE GOLPEO", "BOLSA DE BOXEO 1.2 M", 
+                    "BOLSA DE BOXEO 1.5 M", "BOLSA DE BOXEO 1.8 M", "BOLSA FIJA DE BOXEO", 
+                    "MUÑECOS DE PELEA", "LLANTA DE CROSSFIT 80 KILOS", 
+                    "LLANTAS DE CROSSFIT 2025", "MARTILLO PARA LLANTA 10 KILOS", 
+                    "MARTILLO DE 10 KILOS 2025", "TRX", "TRX MULTI-FUNCTIONAL", 
+                    "CARRO DE EMPUJE CROSSFIT", "BOX DE 4 NIVELES PROFESIONAL", 
+                    "BOX DE 4 NIVELES ARMABLE", "JUEGO DE SACOS BULGAROS (5-25 KG)", 
+                    "JUEGO DE SACOS CROSSFIT (5-25 KG)", "STEPS AJUSTABLES DOCENA", 
+                    "STEPS DE TRES NIVELES DOCENA", "BALONES MEDICINALES (1-10 KG)", 
+                    "SOGA PARA TRICEPS DOS MANOS", "SOGA PARA TRICEPS 1 MANO", 
+                    "SUJETADOR A UNA MANO RECTO", "SUJETADOR A UNA MANO ARQUEADO", 
+                    "AGARRE TRIANGULAR ESPALDA", "AGARRE TRIANGULAR TRICEPS", 
+                    "BARRA RECTA PARA POLEA", "AGARRE TRIANGULAR ESPALDA ABIERTO", 
+                    "AGARRE TIPO U ESPALDA", "AGARRE V PARA POLEA", 
+                    "BARRA ABIERTA AGARRE PROPINO", "BARRA W PARA POLEA", 
+                    "AGARRE ABIERTO LARGO ESPALDA", "Double End Rope", 
+                    "D-Shape Rubber Round Handle", "D-Shape Rubber Flat Handle", 
+                    "M-Shape Rubber Handle", "V-Shape Rubber Handle", 
+                    "Latpull Down Handle", "V-Shape Rowing Handle", 
+                    "Rubber Incased Handle", "V-Shape Rubber Incased Handle", 
+                    "Half-round Rubber Handle Bar", "Rubber Handle Bar (V1)", 
+                    "Rubber Handle Bar (V2)", "PORTA DISCOS", "LIGAS DE RESISTENCIA 2025", 
+                    "TRX 2025", "BALON DE YOGA DE 55 CM", "BALON DE YOGA DE 65 CM", 
+                    "BALON DE YOGA DE 75 CM", "CUERDA DE SALTO 2025", 
+                    "ESCALERA DE AGILIDAD", "CONOS DE ENTRENAMIENTO DOCENA", 
+                    "SEGUROS CON AGARRE PARA BARRAS", "BARRAS OLÍMPICAS 20 KG 1000 LB"
+                ] 
+            }
+        ];
+
+        // ESTADO
+        let cart = [];
+        let activeFilter = 'all';
+
+        // ELEMENTOS DEL DOM
+        const catalogContent = document.getElementById('catalogContent');
+        const navSections = document.getElementById('navSections');
+        const searchInput = document.getElementById('searchInput');
+        const resultsCount = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const cartFloat = document.getElementById('cartFloat');
+        const cartCount = document.getElementById('cartCount');
+
+        // INICIALIZACIÓN
+        document.addEventListener('DOMContentLoaded', function() {
+            initCatalog();
+            setupEventListeners();
+        });
+
+        function initCatalog() {
+            renderNavigation();
+            renderProducts();
+            updateCartUI();
+        }
+
+        function renderNavigation() {
+            if (!navSections) return;
+            
+            navSections.innerHTML = '';
+            
+            // Botón "Todos"
+            const allButton = document.createElement('a');
+            allButton.className = 'nav-compact-item active';
+            allButton.textContent = 'Todos';
+            allButton.href = '#';
+            allButton.onclick = (e) => {
+                e.preventDefault();
+                setActiveFilter('all');
+                document.querySelectorAll('.nav-compact-item').forEach(item => item.classList.remove('active'));
+                allButton.classList.add('active');
+            };
+            navSections.appendChild(allButton);
+            
+            // Botones por categoría
+            data.forEach((category, index) => {
+                const button = document.createElement('a');
+                button.className = 'nav-compact-item';
+                button.textContent = category.categoria.replace(/\d\.\s/, '');
+                button.href = `#cat-${index}`;
+                button.onclick = (e) => {
+                    e.preventDefault();
+                    handleCategoryClick(`cat-${index}`, button);
+                };
+                navSections.appendChild(button);
+            });
+        }
+
+        function handleCategoryClick(filter, button) {
+            setActiveFilter(filter);
+            document.querySelectorAll('.nav-compact-item').forEach(item => item.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Scroll a la sección
+            const section = document.getElementById(filter);
+            if (section) {
+                setTimeout(() => {
+                    const headerHeight = document.querySelector('.main-header')?.offsetHeight || 80;
+                    const topOffset = section.offsetTop - headerHeight - 20;
+                    window.scrollTo({
+                        top: topOffset,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+
+        function renderProducts() {
+            if (!catalogContent) return;
+            
+            catalogContent.innerHTML = '';
+            let visibleProducts = 0;
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            
+            data.forEach((category, catIndex) => {
+                // Crear sección de categoría
+                const categorySection = document.createElement('div');
+                categorySection.className = 'category-section';
+                categorySection.id = `cat-${catIndex}`;
+                
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.className = 'category-title';
+                categoryTitle.textContent = category.categoria;
+                categorySection.appendChild(categoryTitle);
+                
+                // Contenedor para productos de esta categoría
+                const productsContainer = document.createElement('div');
+                productsContainer.className = 'products-container';
+                
+                category.items.forEach((productName, prodIndex) => {
+                    // Filtros
+                    if (activeFilter !== 'all' && activeFilter !== `cat-${catIndex}`) {
+                        return;
+                    }
+                    
+                    if (searchTerm && !productName.toLowerCase().includes(searchTerm)) {
+                        return;
+                    }
+                    
+                    visibleProducts++;
+                    
+                    // Crear nombre de archivo para imagen
+                    const fileName = productName.toLowerCase()
+                        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                        .replace(/[^a-z0-9]/g, '-')
+                        .replace(/-+/g, '-');
+                    
+                    // Crear código único
+                    const productCode = `IMP-${(catIndex + 1).toString().padStart(2, '0')}-${(prodIndex + 1).toString().padStart(3, '0')}`;
+                    
+                    // Crear tarjeta de producto
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card-compact';
+                    productCard.dataset.name = productName.toLowerCase();
+                    productCard.dataset.category = `cat-${catIndex}`;
+                    
+                    productCard.innerHTML = `
+                        <div class="product-image-compact">
+                            <img src="assets/productos/${fileName}.jpg" 
+                                 alt="${productName}"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80'">
+                        </div>
+                        <div class="product-content-compact">
+                            <h3 class="product-title-compact" title="${productName}">${productName}</h3>
+                            <div class="product-code-compact">${productCode}</div>
+                            <div class="product-actions-compact">
+                                <button class="btn-add-compact" onclick="toggleCart('${productName.replace(/'/g, "\\'")}', this, '${productCode}')">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    productsContainer.appendChild(productCard);
+                });
+                
+                categorySection.appendChild(productsContainer);
+                catalogContent.appendChild(categorySection);
+            });
+            
+            // Actualizar contador
+            if (resultsCount) {
+                resultsCount.textContent = visibleProducts;
+            }
+            
+            // Mostrar/ocultar mensaje sin resultados
+            if (noResults) {
+                if (visibleProducts === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+        }
+
+        function setActiveFilter(filter) {
+            activeFilter = filter;
+            renderProducts();
+        }
+
+        // FUNCIONES GLOBALES
+        window.toggleCart = function(item, btn, code) {
+            const idx = cart.findIndex(p => p.name === item);
+            
+            if (idx > -1) { 
+                // Remover del carrito
+                cart.splice(idx, 1); 
+                btn.innerHTML = '<i class="fas fa-plus"></i> Agregar';
+                btn.classList.remove('active');
+            } else { 
+                // Agregar al carrito
+                cart.push({ name: item, code: code }); 
+                btn.innerHTML = '<i class="fas fa-check"></i> En Lista';
+                btn.classList.add('active');
+            }
+            
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+            
+            if (cartFloat) {
+                if (cart.length > 0) {
+                    cartFloat.style.display = 'flex';
+                } else {
+                    cartFloat.style.display = 'flex';
+                }
+            }
+        }
+
+        window.sendWhatsApp = function() {
+            if (cart.length === 0) {
+                alert("Tu lista de cotización está vacía. Agrega productos primero.");
+                return;
+            }
+            
+            let msg = `*SOLICITUD DE COTIZACIÓN - Importadora Planet Fitness Bolivia*\n\n`;
+            msg += `Hola, solicito información de precios para los siguientes productos:\n\n`;
+            
+            cart.forEach((product, index) => {
+                msg += `${index + 1}. ${product.name} (${product.code})\n`;
+            });
+            
+            msg += `\n*Total:* ${cart.length} productos\n`;
+            msg += `*Fecha:* ${new Date().toLocaleDateString('es-BO')}\n`;
+            msg += `\nPor favor enviarme:\n• Precios unitarios\n• Disponibilidad\n• Tiempos de entrega\n• Opciones de pago`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function setupEventListeners() {
+            // Buscador en tiempo real
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    renderProducts();
+                });
+                
+                // Limpiar busqueda con Escape
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        this.value = '';
+                        renderProducts();
+                    }
+                });
+            }
+            
+            // Click en carrito flotante
+            if (cartFloat) {
+                cartFloat.addEventListener('click', sendWhatsApp);
+            }
+        }
+    </script>
+</body>
+</html>

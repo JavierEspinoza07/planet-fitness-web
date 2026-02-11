@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce nuestra historia, misión, visión y valores como importadores líderes de maquinaria fitness en Bolivia.">
+    <title>Nosotros | Importadora Planet Fitness Bolivia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA PÁGINA NOSOTROS */
+        .hero-about {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95), rgba(17, 34, 64, 0.95)),
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(139, 0, 0, 0.15) 0%, transparent 50%);
+        }
+        
+        .hero-about .page-title {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        
+        .hero-about .page-subtitle {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--navy-medium);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        
+        .stat-item {
+            background: var(--navy-dark);
+            padding: 35px 25px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 0, 0, 0.3);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-number {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--burgundy-light);
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .stat-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Timeline */
+        .history-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .history-timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(139, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .history-timeline:before {
+                left: 20px;
+            }
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            align-items: flex-start;
+        }
+        
+        .timeline-year {
+            background: var(--gradient-burgundy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            margin-right: 25px;
+            flex-shrink: 0;
+            align-self: flex-start;
+            box-shadow: var(--shadow-md);
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            z-index: 1;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            background: var(--navy-medium);
+            padding: 25px;
+            border-radius: var(--radius-lg);
+            flex: 1;
+            border-left: 4px solid var(--burgundy);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-normal);
+        }
+        
+        .timeline-content:hover {
+            border-color: rgba(139, 0, 0, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .timeline-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .timeline-year {
+                margin-right: 0;
+                align-self: flex-start;
+            }
+            
+            .timeline-content {
+                border-left: none;
+                border-top: 4px solid var(--burgundy);
+            }
+        }
+        
+        /* Misión y Visión Grid */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .mv-card {
+            background: var(--navy-medium);
+            padding: 35px 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 0, 0, 0.3);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-steel);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .mv-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+        }
+        
+        .mv-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Valores Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: var(--navy-medium);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 0, 0, 0.3);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-steel);
+            color: white;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+        
+        .value-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .value-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Equipo Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-card {
+            background: var(--navy-medium);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all var(--transition-normal);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 0, 0, 0.3);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .team-img {
+            height: 250px;
+            background: var(--gradient-steel);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-name {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .team-role {
+            color: var(--burgundy-light);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .team-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Certificaciones */
+        .certifications-section {
+            background: var(--navy-medium);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .cert-item {
+            background: var(--navy-dark);
+            padding: 30px 20px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-normal);
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 0, 0, 0.3);
+        }
+        
+        .cert-icon {
+            color: var(--burgundy-light);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .cert-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .cert-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Ajustes responsive */
+        @media (max-width: 768px) {
+            .hero-about {
+                padding: 140px 0 70px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+            
+            .stat-item {
+                padding: 25px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.25rem;
+            }
+            
+            .mv-grid,
+            .values-grid,
+            .team-grid,
+            .cert-grid {
+                gap: 20px;
+            }
+            
+            .team-img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+    <!-- Header (mantén igual que index.html) -->
+ <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand logo-link" href="index.html">
+                <img src="assets/logos/logo.png" alt="Importadora Planet Fitness Bolivia" class="logo-image">
+                <div class="logo-text ms-3">
+                                        <h1>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h1>
+                    <p class="tagline mb-0">Equipamiento profesional desde 2015</p>
+                </div>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html"><i class="fas fa-dumbbell"></i> Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link btn-quote" href="cotizacion.html"><i class="fas fa-file-alt"></i> Cotizar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <h1 class="page-title">Nuestra <span class="highlight">Historia</span></h1>
+            <p class="page-subtitle">Liderando la revolución fitness en Bolivia desde 2015</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">En <span class="highlight">Números</span></h2>
+                <p class="section-subtitle">Cifras que respaldan nuestra trayectoria</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <h3>Años de Experiencia</h3>
+                    <p>Importando equipamiento profesional</p>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number">850+</span>
+                    <h3>Equipos Instalados</h3>
+                    <p>En todo el territorio boliviano</p>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number">120+</span>
+                    <h3>Clientes Satisfechos</h3>
+                    <p>Gimnasios, hoteles y clubes deportivos</p>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <h3>Marcas Internacionales</h3>
+                    <p>Fabricantes certificados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia -->
+    <section class="alt-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra <span class="highlight">Trayectoria</span></h2>
+                <p class="section-subtitle">Una década transformando el fitness boliviano</p>
+            </div>
+            
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>Fundación</h3>
+                        <p>Iniciamos operaciones identificando la necesidad de equipamiento profesional de calidad en el mercado boliviano. Establecimos nuestras primeras relaciones con fabricantes internacionales.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <h3>Primer Gimnasio Comercial</h3>
+                        <p>Equipamos nuestro primer gimnasio comercial de 500m² en Santa Cruz, marcando un hito en la importación de maquinaria fitness profesional para uso intensivo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3>Expansión Nacional</h3>
+                        <p>Ampliamos nuestra cobertura a las principales ciudades de Bolivia, estableciendo alianzas estratégicas con distribuidores regionales y fortaleciendo nuestro equipo técnico.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Certificaciones Internacionales</h3>
+                        <p>Obtuvimos certificaciones de calidad ISO y establecimos relaciones directas con 8 fabricantes líderes en Estados Unidos, Europa y Asia.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Líderes en el Mercado</h3>
+                        <p>Nos consolidamos como la importadora líder en Bolivia, con más de 850 equipos instalados y un equipo de 15 especialistas en fitness y logística.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra <span class="highlight">Esencia</span></h2>
+                <p class="section-subtitle">Lo que nos define y hacia dónde vamos</p>
+            </div>
+            
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>Proveer equipamiento fitness de la más alta calidad internacional, ofreciendo soluciones integrales que impulsen el desarrollo del sector deportivo y promuevan estilos de vida saludables en Bolivia.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Ser reconocidos como el referente nacional en importación de maquinaria fitness profesional, expandiendo nuestra presencia a países vecinos y estableciendo estándares de calidad, servicio y innovación en la industria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="alt-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros <span class="highlight">Valores</span></h2>
+                <p class="section-subtitle">Principios que guían cada acción y decisión</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Calidad</h3>
+                    <p>Trabajamos exclusivamente con equipos certificados internacionalmente para uso comercial intensivo.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Confianza</h3>
+                    <p>Construimos relaciones duraderas basadas en transparencia, honestidad y cumplimiento.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Compromiso</h3>
+                    <p>Nos involucramos en cada proyecto como si fuera nuestro, asegurando el éxito de nuestros clientes.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovación</h3>
+                    <p>Constantemente buscamos nuevas tecnologías y soluciones para el mercado fitness boliviano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para Trabajar con los <span class="highlight">Expertos</span>?</h2>
+                <p>Únete a más de 120 clientes satisfechos que confían en nuestra experiencia y profesionalismo.</p>
+                <a href="contacto.html" class="btn btn-primary btn-large"><i class="fas fa-handshake"></i> Contactar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (mantén igual que index.html) -->
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-dumbbell"></i>
+                                <h3>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h3>
+                </div>
+                <p>Equipamiento fitness profesional con atención 24/7 por WhatsApp. ¡Habla con nosotros ahora!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/59170649037            " target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                    <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                    <li><a href="servicios.html"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>WhatsApp 24/7</h4>
+                <div class="whatsapp-info">
+                    <div class="whatsapp-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <p><strong>+591 70649037            </strong></p>
+                            <p>Atención inmediata</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p><strong>24 horas / 7 días</strong></p>
+                            <p>Incluidos feriados</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <p><strong>Respuesta rápida</strong></p>
+                            <p>Máximo 5 minutos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul class="footer-links">
+                    <li><a href="servicios.html#asesoria"><i class="fas fa-chevron-right"></i> Asesoría Gratuita</a></li>
+                    <li><a href="servicios.html#instalacion"><i class="fas fa-chevron-right"></i> Instalación</a></li>
+                    <li><a href="servicios.html#soporte"><i class="fas fa-chevron-right"></i> Soporte Técnico</a></li>
+                    <li><a href="servicios.html#mantenimiento"><i class="fas fa-chevron-right"></i> Mantenimiento</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Catálogo Completo</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2024 Importadora Planet Fitness Bolivia. Atención 24/7 por WhatsApp.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="https://wa.me/59170649037            ?text=Hola,%20quiero%20saber%20sobre%20términos%20y%20condiciones" target="_blank">Términos y Condiciones</a>
+                <a href="https://wa.me/59170649037            ?text=Hola,%20tengo%20una%20consulta%20sobre%20privacidad" target="_blank">Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/59170649037            " class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

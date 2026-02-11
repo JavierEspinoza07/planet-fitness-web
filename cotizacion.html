@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicita una cotización personalizada para equipamiento fitness. Calcula el costo de tu gimnasio profesional en Bolivia.">
+    <title>Cotización | Importadora Planet Fitness Bolivia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+ <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand logo-link" href="index.html">
+                <img src="assets/logos/logo.png" alt="Importadora Planet Fitness Bolivia" class="logo-image">
+                <div class="logo-text ms-3">
+                                        <h1>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h1>
+                    <p class="tagline mb-0">Equipamiento profesional desde 2015</p>
+                </div>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html"><i class="fas fa-dumbbell"></i> Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link btn-quote" href="cotizacion.html"><i class="fas fa-file-alt"></i> Cotizar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Solicita tu <span class="highlight">Cotización</span></h1>
+            <p class="page-subtitle">Calcula el costo aproximado de equipar tu gimnasio profesional</p>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-info">
+                    <h2>Cotización <span class="highlight">Personalizada</span></h2>
+                    <p>Completa el formulario con los detalles de tu proyecto y recibe una cotización detallada en menos de 24 horas.</p>
+                    
+                    <div class="quote-benefits">
+                        <h3>¿Qué incluye nuestra cotización?</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Precio detallado por equipo</li>
+                            <li><i class="fas fa-check"></i> Costos de importación y nacionalización</li>
+                            <li><i class="fas fa-check"></i> Presupuesto de instalación</li>
+                            <li><i class="fas fa-check"></i> Opciones de financiamiento</li>
+                            <li><i class="fas fa-check"></i> Tiempos de entrega estimados</li>
+                            <li><i class="fas fa-check"></i> Garantías y soporte post-venta</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quote-contact">
+                        <h3>¿Prefieres contacto directo?</h3>
+                        <p>Llámanos al <strong>+591 70649037            </strong> o escríbenos a <strong>ventas@importadorafitness.bo</strong></p>
+                    </div>
+                </div>
+                
+                <div class="quote-form-container">
+                    <form class="quote-form" id="quoteForm">
+                        <div class="form-group">
+                            <label for="quoteName">Nombre Completo *</label>
+                            <input type="text" id="quoteName" name="quoteName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteEmail">Correo Electrónico *</label>
+                            <input type="email" id="quoteEmail" name="quoteEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quotePhone">Teléfono *</label>
+                            <input type="tel" id="quotePhone" name="quotePhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteCity">Ciudad *</label>
+                            <select id="quoteCity" name="quoteCity" required>
+                                <option value="">Seleccione su ciudad</option>
+                                <option value="santa-cruz">Santa Cruz</option>
+                                <option value="la-paz">La Paz</option>
+                                <option value="cochabamba">Cochabamba</option>
+                                <option value="sucre">Sucre</option>
+                                <option value="tarija">Tarija</option>
+                                <option value="oruro">Oruro</option>
+                                <option value="potosi">Potosi</option>
+                                <option value="beni">Beni</option>
+                                <option value="pando">Pando</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteType">Tipo de Proyecto *</label>
+                            <select id="quoteType" name="quoteType" required>
+                                <option value="">Seleccione el tipo</option>
+                                <option value="gimnasio-comercial">Gimnasio Comercial</option>
+                                <option value="hotel-resort">Hotel/Resort</option>
+                                <option value="club-deportivo">Club Deportivo</option>
+                                <option value="centro-educativo">Centro Educativo</option>
+                                <option value="empresa-corporativo">Empresa/Corporativo</option>
+                                <option value="residencial">Uso Residencial</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteSpace">Espacio Disponible (m²) *</label>
+                            <input type="number" id="quoteSpace" name="quoteSpace" min="20" max="1000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteBudget">Presupuesto Estimado (USD)</label>
+                            <select id="quoteBudget" name="quoteBudget">
+                                <option value="">Seleccione rango</option>
+                                <option value="10000-20000">$10,000 - $20,000</option>
+                                <option value="20000-40000">$20,000 - $40,000</option>
+                                <option value="40000-70000">$40,000 - $70,000</option>
+                                <option value="70000-100000">$70,000 - $100,000</option>
+                                <option value="100000+">Más de $100,000</option>
+                                <option value="no-se">No sé / Por definir</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Equipos de Interés</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="quoteEquipment" value="fuerza"> Máquinas de Fuerza</label>
+                                <label><input type="checkbox" name="quoteEquipment" value="cardio"> Cardio Profesional</label>
+                                <label><input type="checkbox" name="quoteEquipment" value="funcional"> Funcional & Cross Training</label>
+                                <label><input type="checkbox" name="quoteEquipment" value="accesorios"> Accesorios y Pesas</label>
+                                <label><input type="checkbox" name="quoteEquipment" value="paquete-completo"> Paquete Completo</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteTimeline">Tiempo Estimado para Implementación</label>
+                            <select id="quoteTimeline" name="quoteTimeline">
+                                <option value="">Seleccione tiempo</option>
+                                <option value="1-3">1-3 meses</option>
+                                <option value="3-6">3-6 meses</option>
+                                <option value="6-12">6-12 meses</option>
+                                <option value="12+">Más de 1 año</option>
+                                <option value="no-se">Por definir</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quoteMessage">Mensaje Adicional</label>
+                            <textarea id="quoteMessage" name="quoteMessage" rows="4" placeholder="Describe tu proyecto, necesidades específicas o cualquier información adicional que consideres importante..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Solicitar Cotización
+                        </button>
+                    </form>
+                    
+                    <div id="quoteMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calculadora <span class="highlight">Estimada</span></h2>
+                <p class="section-subtitle">Obtén una estimación preliminar del costo de equipar tu gimnasio</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <div class="form-group">
+                        <label for="calcSpace">Espacio del Gimnasio (m²)</label>
+                        <input type="range" id="calcSpace" name="calcSpace" min="50" max="500" value="150">
+                        <div class="range-value"><span id="calcSpaceValue">150</span> m²</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="calcEquipment">Nivel de Equipamiento</label>
+                        <select id="calcEquipment" name="calcEquipment">
+                            <option value="basico">Básico (equipos esenciales)</option>
+                            <option value="estandar" selected>Estándar (equilibrado)</option>
+                            <option value="premium">Premium (alta gama)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="calcType">Tipo de Establecimiento</label>
+                        <select id="calcType" name="calcType">
+                            <option value="comercial">Gimnasio Comercial</option>
+                            <option value="hotel" selected>Hotel/Resort</option>
+                            <option value="club">Club Deportivo</option>
+                            <option value="corporativo">Empresa/Corporativo</option>
+                        </select>
+                    </div>
+                    
+                    <button id="calcButton" class="btn btn-outline">
+                        <i class="fas fa-calculator"></i> Calcular Estimación
+                    </button>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3>Estimación Preliminar</h3>
+                    <div class="result-item">
+                        <span>Equipamiento:</span>
+                        <span id="calcEquipmentCost">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Instalación:</span>
+                        <span id="calcInstallationCost">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Importación:</span>
+                        <span id="calcImportCost">$0</span>
+                    </div>
+                    <div class="result-item total">
+                        <span>Total Estimado:</span>
+                        <span id="calcTotalCost">$0</span>
+                    </div>
+                    <p class="result-note">* Esta es una estimación preliminar. Para una cotización exacta, complete el formulario superior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fas fa-dumbbell"></i>
+                                <h3>Importadora <span class="highlight">Planet Fitness</span> Bolivia</h3>
+                </div>
+                <p>Equipamiento fitness profesional con atención 24/7 por WhatsApp. ¡Habla con nosotros ahora!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/59170649037            " target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                    <li><a href="nosotros.html"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                    <li><a href="servicios.html"><i class="fas fa-chevron-right"></i> Servicios</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>WhatsApp 24/7</h4>
+                <div class="whatsapp-info">
+                    <div class="whatsapp-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <p><strong>+591 70649037            </strong></p>
+                            <p>Atención inmediata</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p><strong>24 horas / 7 días</strong></p>
+                            <p>Incluidos feriados</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <p><strong>Respuesta rápida</strong></p>
+                            <p>Máximo 5 minutos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul class="footer-links">
+                    <li><a href="servicios.html#asesoria"><i class="fas fa-chevron-right"></i> Asesoría Gratuita</a></li>
+                    <li><a href="servicios.html#instalacion"><i class="fas fa-chevron-right"></i> Instalación</a></li>
+                    <li><a href="servicios.html#soporte"><i class="fas fa-chevron-right"></i> Soporte Técnico</a></li>
+                    <li><a href="servicios.html#mantenimiento"><i class="fas fa-chevron-right"></i> Mantenimiento</a></li>
+                    <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Catálogo Completo</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2024 Importadora Planet Fitness Bolivia. Atención 24/7 por WhatsApp.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="https://wa.me/59170649037            ?text=Hola,%20quiero%20saber%20sobre%20términos%20y%20condiciones" target="_blank">Términos y Condiciones</a>
+                <a href="https://wa.me/59170649037            ?text=Hola,%20tengo%20una%20consulta%20sobre%20privacidad" target="_blank">Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <a href="https://wa.me/59170649037            " class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script src="js/quote-form.js"></script>
+    <script src="js/quote-calculator.js"></script>
+</body>
+</html>
